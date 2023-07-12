@@ -1,0 +1,91 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.lineup {
+    background-color: v.$rosa;
+    padding: 5rem 0;
+    h2{
+        color: v.$blanco;
+        text-align: center;
+        padding: 3rem;
+        text-transform: uppercase;
+        -webkit-text-stroke: 1px black;
+        text-shadow: .3rem .3rem .5rem black;
+    }
+}
+
+.dia {
+    background-color: darken(v.$rosa, 5%);
+    color: v.$blanco;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2rem;
+    box-shadow: 0rem 0rem 2rem #333;
+}
+.escenarios-contenedor {
+    @include m.tabletXL {
+        @include m.grid(2, 5rem);
+    }
+    .escenario {
+        margin: 5rem 0;
+        box-shadow: 0.5rem 0.5rem 2rem #333;
+        transition: all .3s;
+        @include m.desktop {
+            &:hover{
+                transform: scale(1.03,1.03);
+            }
+        }
+        .nombre-escenario{
+            font-weight: 700;
+            text-align: center;
+            padding-top: 3rem;
+            padding-bottom: 2rem;
+            margin: 0rem;
+        }
+        p {
+            &:after {
+                content: '';
+                display: block;
+                width: 20rem;
+                height: 10rem;
+                margin: 0 auto;
+                background-position: center center;
+                background-size: 15rem; 
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    .calendario {
+        @include m.resetear-lista;
+        li {
+            padding: 3rem;
+            font-weight: 700;
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.edm .nombre-escenario:after{
+    background-image: url(../img/icono_edm.png);
+}
+
+.rock .nombre-escenario:after{
+    background-image: url(../img/icono_rock.png);
+}
+
+.bg-amarillo{
+    background-color: v.$amarillo;
+    li:nth-child(odd){
+        background-color: darken(v.$amarillo, 15%);
+    }
+}
+
+.bg-verde{
+    background-color: v.$verde;
+    li:nth-child(odd){
+        background-color: darken(v.$verde, 15%);
+    }
+}

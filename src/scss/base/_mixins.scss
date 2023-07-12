@@ -1,0 +1,49 @@
+@use 'variables' as v;
+
+@mixin celular {
+    @media (min-width: v.$celular){
+        @content;
+    }
+}
+
+@mixin tablet2 {
+    @media (max-width: v.$tablet){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet){
+        @content;
+    }
+}
+
+@mixin tabletXL {
+    @media (min-width: 885px){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop){
+        @content;
+    }
+}
+
+@mixin grid($col, $espacio) {
+    display: grid;
+    grid-template-columns: repeat($col, 1fr);
+    gap: $espacio;
+}
+
+@mixin resetear-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin letra {
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 4px;
+    font-weight: 400;
+}

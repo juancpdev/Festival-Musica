@@ -1,0 +1,112 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m; 
+
+//HEADER-------------------------------------------------
+.header { 
+    background-color: v.$rosa2;
+    margin: 0;
+    padding: 2rem;
+    z-index: 10;
+    width: 100%;
+    box-shadow: .2rem .2rem .7rem rgb(51, 8, 8);
+    @include m.tablet {
+        display: block;
+    }
+    h1 {
+        -webkit-text-stroke: 1px black;
+        color: v.$blanco;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        @include m.tablet {
+            margin: 0;
+        }
+        @include m.desktop {
+            font-size: 4rem;
+        }
+    } 
+
+    @include m.tablet2 {
+        position: fixed;
+    }
+}
+
+//MENU-------------------------------------------------
+.menu {
+    @include m.tablet { 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.navegacion-principal {
+    display: none;
+    @include m.tablet {
+        display: block;
+    }
+    a {
+        @include m.tablet {
+            color: v.$blanco;
+            font-size: 1.6rem;
+            margin-right: 3rem;
+            padding-bottom: 1rem;
+            &:hover{
+                color: #fe92ae;
+                border-bottom: .1rem solid #fe92ae;
+            }
+        }
+        @include m.desktop {
+            font-size: 2rem;
+        }
+    }
+}
+
+.nav_container {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include m.tablet {
+        height: 4rem;
+    }
+    a {
+        h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            @include m.tablet {
+                font-size: 3rem;
+            }
+        }
+    }
+    i {
+        font-size: 2rem;
+        color: v.$blanco;
+        cursor: pointer;
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+}
+
+.nav-fijo {
+    @include m.tablet {
+        position: fixed;
+        top: 0;
+    }
+}
+.nav_celu {
+    @include m.tablet2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    a {
+        @include m.tablet2 {
+            padding: 2rem;
+            color: v.$blanco;
+            
+        }
+    }
+}
